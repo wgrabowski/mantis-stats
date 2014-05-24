@@ -13,10 +13,14 @@
 				<h2>by wg</h2>
 			</hgroup>
 		</header>
-		<aside>
+		<aside id="controls">
 			<label for="csv">
 				<input type="file" name="csv" id="csv" multiple accept=".csv" />
 			</label>
+			<button type="button" id="recalc">Calculate statistics</button>
+			<button type="button" data-show="status-stats">By status</button>
+			<button type="button" data-show="time-stats">By time</button>
+			
 		</aside>
 		<article id="charts">
 			<header>

@@ -17,14 +17,33 @@ statsApp = {
 			});
 			
 		}
-	},
-	showStats : function(type) {
 		
+		for(var i=0,j=button = statsApp.showButtons.length; i<j; i++){
+		  var button = statsApp.showButtons[i];
+		  button.onclick = function(e){
+				statsApp.showStats(e.target.getAttribute("data-show"));  	
+		  }
+		};
+		statsApp.recalcButton.onclick = function(){
+			console.log("cliock");
+			statsApp.calcStats();
+		}
+	},
+	calcStats : function() {
+	  	statsApp.stats = mstats.calc.getDailyStats(statsApp.data);
+
+	},
+	showStats : function(templateName) {
+	  	var h = Handlebars.templates[templateName]({days:statsApp.stats});
+	  	statsApp.chartView.innerHTML = h;	
 
 	},
 	fileInput : document.querySelector("input#csv"),
+	showButtons : document.querySelectorAll("button[data-show]"),
+	recalcButton : document.querySelector("button#recalc"),
 	data : {},
 	chartView:document.querySelector("#charts .content")
 }
 
 statsApp.init();
+

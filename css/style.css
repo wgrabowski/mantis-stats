@@ -1,4 +1,9 @@
 body {
   font: 16px "Roboto Thin", "Roboto Th", "Ubuntu Light", sans-serif;
-  background: #edede4;
+  background: floralwhite;
   color: #252525; }
+
+#controls {
+  display: block;
+  width: 100%;
+  background: darkseagreen; }

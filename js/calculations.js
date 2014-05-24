@@ -51,9 +51,12 @@ mstats.calc = {
 			}
 
 			console.log(day.day, mstats.calc.calcStatsByProperty(day.data));
-			days.push({day:day.day,data:mstats.calc.calcStatsByProperty(day.data)});
+			days.push({
+				day : day.day,
+				data : mstats.calc.calcStatsByProperty(day.data)
+			});
 		}
 		console.timeEnd("kupa");
-
+		return days;
 	}
 }
