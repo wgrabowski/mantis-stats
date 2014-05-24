@@ -6,14 +6,14 @@ if (!mstats.utils) {
 }
 
 mstats.utils.file = {
-	readFilesAsText : function(files,defer) {
+	readFilesAsText : function(files,defer,lastToOpen) {
 		var obj = [];
 		for (var i = 0, j = files.length; i < j; i++) {
 			var reader = new FileReader();
 			reader.onloadend = function(evt) {
 				if (evt.target.readyState == FileReader.DONE) {
 					obj.push(evt.target.result);
-					if(obj.length == files.length) {defer.resolve();};
+					if((files.length > 1 && (obj.length == files.length)) || lastToOpen) {defer.resolve();};
 				}
 			};
 			reader.readAsText(files[i]);
@@ -27,7 +27,7 @@ mstats.utils.file = {
 		for (var i = 0, j = files.length; i < j; i++) {
 			
 			key = mstats.utils.file.fileNameToDateStamp(files[i].name);
-			val = mstats.utils.file.readFilesAsText([files[i]],defer);
+			val = mstats.utils.file.readFilesAsText([files[i]],defer,(i == j-1));
 			
 			obj[key] = val;
 			

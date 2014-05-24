@@ -12,17 +12,19 @@ statsApp = {
 				var cleanData = mstats.utils.data.formatData(rawData);
 				rawData = null;
 				statsApp.data = cleanData;
-				cleanData = null
+				cleanData = null;
 				
 			});
 			
 		}
 	},
-	showStats : function() {
+	showStats : function(type) {
+		
 
 	},
 	fileInput : document.querySelector("input#csv"),
-	data : {}
+	data : {},
+	chartView:document.querySelector("#charts .content")
 }
 
 statsApp.init();
