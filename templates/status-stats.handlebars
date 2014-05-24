@@ -1,0 +1,18 @@
+<ul>
+	{{#each days}}
+		<li data-day={{this.day}}>
+			{{#each this.data.Status}}
+			<abbr title="{{this}} issues {{@key}}" class="size{{this}}"><strong>{{this}}</strong>{{@key}}
+				
+			</abbr>
+			{{/each}}
+			{{#each this.data.status}}
+			<abbr title="{{this}} issues {{@key}}" class="size{{this}}"><strong>{{this}}</strong>{{@key}}
+				
+			</abbr>
+			{{/each}}
+		</li>
+	
+	{{/each}}
+	
+</ul>
