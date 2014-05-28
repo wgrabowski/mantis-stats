@@ -1,9 +1,51 @@
 body {
   font: 16px "Roboto Thin", "Roboto Th", "Ubuntu Light", sans-serif;
   background: floralwhite;
-  color: #252525; }
+  color: #252525;
+  margin: 0;
+  padding: 0; }
+  body > header, body article {
+    margin: 0;
+    float: left;
+    clear: both; }
 
 #controls {
   display: block;
   width: 100%;
   background: darkseagreen; }
+
+.stats-bars {
+  list-style: none;
+  width: auto;
+  display: block;
+  float: left;
+  font-family: "Ubuntu Mono",monospace; }
+  .stats-bars li {
+    width: auto;
+    max-width: 15%;
+    background: wheat;
+    position: relative;
+    float: left;
+    margin: 4px; }
+    .stats-bars li dl dt {
+      font-weight: bold;
+      background: #ecc16f; }
+    .stats-bars li dl dd:hover {
+      background: #ff0; }
+    .stats-bars li abbr {
+      width: 100%;
+      clear: both;
+      display: block; }
+    .stats-bars li:before {
+      content: attr(data-day);
+      position: absolute;
+      right: 0;
+      left: 0;
+      height: 2rem;
+      line-height: 2rem;
+      top: -2rem;
+      background: indianred;
+      color: white; }
+    .stats-bars li:focus {
+      width: 100%;
+      clear: both; }

@@ -1,0 +1,22 @@
+<ul class="stats-bars">
+	{{#each days}}
+		<li data-day="Day: {{this.day}}" tabindex="{{@index}}">
+		<dl>
+			{{#each this.data}}
+			
+			<dt>{{@key}}</dt>
+				{{#each this}}
+			<dd><abbr title="{{this}} - {{@key}}" class="size{{this}}">{{@key}} : <strong>{{this}}</strong>
+			</abbr></dd>
+				{{/each}}
+			
+			
+			{{/each}}
+			</dl>
+			
+			
+		</li>
+	
+	{{/each}}
+	
+</ul>

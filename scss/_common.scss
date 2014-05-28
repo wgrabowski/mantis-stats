@@ -2,10 +2,67 @@ body{
   font:$font-size $font-stack;
   background: $bg;
   color:$color;
-  
+  margin:0;
+  padding:0;
+  >header,article {
+    margin:0;
+    float:left;
+    clear:both;
+  }
 }
 #controls{
   display: block;
   width:100%;
   background:$bg-2;
+}
+
+.stats-bars{
+  list-style:none;
+  width:auto;
+  display: block;
+  float:left;
+  font-family:"Ubuntu Mono",monospace;
+  li{
+    width:$bar-width;
+    max-width:$bar-max-width;
+    background:$bar-bg;
+    position:relative;
+    float:left;
+    margin:4px;
+    dl{
+      dt{
+        font-weight:bold;
+        background:darken($bar-bg,15%);
+      }
+      dd{
+        &:hover{
+          
+      background:#ff0;
+      
+        }
+      }
+    }
+    abbr{
+      width:100%;
+      clear:both;
+      display:block;
+      
+    }
+    &:before{
+      content:attr(data-day);
+      position:absolute;
+      right:0;
+      left:0;
+      height:$bar-label-height;
+      line-height:$bar-label-height;
+      top:-$bar-label-height;
+      background: $bar-label-bg;
+      color: $bar-label-color;
+    }
+   &:focus{
+     width:100%;
+     clear:both;
+   }
+  }
+  
 }
