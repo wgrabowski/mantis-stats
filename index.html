@@ -16,14 +16,11 @@
 			<label for="csv">
 				<input type="file" name="csv" id="csv" multiple accept=".csv" />
 			</label>
-			<button type="button" id="recalc">Calculate statistics</button>
-			<button type="button" data-show="all-stats">Raw stats - all field</button>
-			<button type="button" data-show="all-stats">Raw stats - custom field</button>
-			<select name="selectFields" id="selectFiels" multiple>
-				<option value="">load data to see fields list</option>
-			</select>
-			<button type="button" data-show="status-stats">By status</button>
-			<button type="button" data-show="time-stats">By time</button>
+			<button type="button" id="load">01 Load file(s)</button>
+			<button type="button" id="recalc" disabled="true">02 Calculate statistics</button>
+			<button type="button" data-show="all-stats"  disabled="true">03 Text stats - all field</button>
+			<button type="button" data-show="status-stats"  disabled="true">03 Text stats - by status</button>
+			<button type="button" data-draw="Status"  disabled="true">03 Draw Status charts</button>
 			
 		</nav>
 		</header>
@@ -33,10 +30,30 @@
 				<h1></h1>
 				<nav></nav>
 			</header>
+			<details open="true">
+				<summary>Text data</summary>		
 			<section class="content">
 				
+				
 			</section>
-			<canvas id="graphs" width="900" height="400"></canvas>
+			</details>
+			
+			<details open="true">
+				<summary>Charts</summary>
+				<section>
+				
+			<canvas id="graphs" width="1500" height="800" style="float:left"></canvas>
+			<canvas id="legend" width="120" height="800" style="float:left">
+				Twoja przeglądarka nie obsuługje tego
+			</canvas>
+			<aside style="float:right">
+				<label for="canvasBg">Chart background color</label>
+				<input type="color" name="canvasBg" id="canvasBg" />
+			</aside>
+			</section>
+			</details>
+			
+			
 		</article>
 
 	</body>

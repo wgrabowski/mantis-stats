@@ -13,6 +13,15 @@ body {
   display: block;
   width: 100%;
   background: darkseagreen; }
+  #controls button {
+    background: transparent;
+    color: floralwhite;
+    border: 1px solid floralwhite;
+    font-size: 20px;
+    padding: 0.5em; }
+    #controls button[disabled="true"] {
+      color: gray;
+      border-color: gray; }
 
 .stats-bars {
   list-style: none;
@@ -26,7 +35,8 @@ body {
     background: wheat;
     position: relative;
     float: left;
-    margin: 4px; }
+    margin: 4px;
+    margin-top: 4rem; }
     .stats-bars li dl dt {
       font-weight: bold;
       background: #ecc16f; }
@@ -49,3 +59,20 @@ body {
     .stats-bars li:focus {
       width: 100%;
       clear: both; }
+
+#graphs {
+  -webkit-transform: rotateX(180deg);
+  -moz-transform: rotateX(180deg);
+  -ms-transform: rotateX(180deg);
+  -o-transform: rotateX(180deg);
+  transform: rotateX(180deg);
+  border: 1px solid gray; }
+
+#csv {
+  display: none; }
+
+details {
+  width: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }

@@ -14,6 +14,17 @@ body{
   display: block;
   width:100%;
   background:$bg-2;
+  button{
+    background:transparent;
+    color:$color-2;
+    border:1px solid $color-2;
+    font-size:$font-size*1.25;
+    padding:0.5em;
+    &[disabled="true"]{
+      color:gray;
+      border-color:gray
+    }
+  }
 }
 
 .stats-bars{
@@ -29,6 +40,7 @@ body{
     position:relative;
     float:left;
     margin:4px;
+    margin-top:$bar-label-height*2;
     dl{
       dt{
         font-weight:bold;
@@ -66,3 +78,19 @@ body{
   }
   
 }
+#graphs{
+  -webkit-transform: rotateX(180deg);
+  -moz-transform: rotateX(180deg);
+  -ms-transform: rotateX(180deg);
+  -o-transform: rotateX(180deg);
+  transform: rotateX(180deg);
+  border:1px solid gray
+}
+
+#csv{
+  display:none
+}
+details{width:100%;
+-webkit-box-sizing: border-box;
+-moz-box-sizing: border-box;
+box-sizing: border-box;}
