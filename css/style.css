@@ -1,5 +1,5 @@
 body {
-  font: 16px "Roboto Thin", "Roboto Th", "Ubuntu Light", sans-serif;
+  font: 16px "Roboto", "Calibri", "Arial", sans-serif;
   background: floralwhite;
   color: #252525;
   margin: 0;
@@ -66,7 +66,8 @@ body {
   -ms-transform: rotateX(180deg);
   -o-transform: rotateX(180deg);
   transform: rotateX(180deg);
-  border: 1px solid gray; }
+  border: 1px solid gray;
+  width: 705; }
 
 #csv {
   display: none; }

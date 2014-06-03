@@ -22,8 +22,9 @@ function drawDataset(dataset) {
 	var ctx = legend.getContext("2d");
 	for (key in dataset) {
 		console.log(key, statusColors[key]);
-		drawChart(dataset[key], statusColors[key]);
-		ctx.fillStyle = statusColors[key];
+		drawChart(dataset[key], chartColors[count-1]);
+		ctx.fillStyle = chartColors[count-1];
+		ctx.font = "bold 30px Roboto,Calibri,sans-serif";
 		ctx.fillText(key, 10, 30 * count);
 		count++;
 	}
@@ -37,7 +38,7 @@ function drawGrid() {
 		ctx.moveTo(i * scale.x, 0);
 		ctx.lineTo(i * scale.x, canvasSize.y);
 		ctx.strokeStyle = "gray";
-		ctx.lineWidth= 1;
+		ctx.lineWidth = 1;
 		ctx.stroke();
 	};
 	for (var i = 0; i < gridCount.y; i++) {
@@ -45,7 +46,7 @@ function drawGrid() {
 		ctx.moveTo(0, i * scale.y);
 		ctx.lineTo(canvasSize.x, i * scale.y);
 		ctx.strokeStyle = "gray";
-		ctx.lineWidth= 1;
+		ctx.lineWidth = 1;
 		ctx.stroke();
 	};
 }
@@ -53,13 +54,12 @@ function drawGrid() {
 function drawChart(dataset, color) {
 	var ctx = graphs.getContext("2d");
 	ctx.beginPath();
-	ctx.moveTo(0, 0);
 	for (var i = 0, j = dataset.length; i < j; i++) {
-		value = isNaN(dataset[i]) ? 0 : dataset[i] * scale.y
-		ctx.lineTo(i * scale.x, value);
+		value = isNaN(dataset[i]) ? 0 : dataset[i] * scale.y;
+		i == 0 ? ctx.moveTo(i * scale.x, value) : ctx.lineTo(i * scale.x, value);
 	}
 	ctx.strokeStyle = color;
-	ctx.lineWidth= 3;
+	ctx.lineWidth = 3;
 	ctx.stroke();
 
 }
@@ -84,7 +84,6 @@ function prepareDataset(originalData, field) {
 	return dataset;
 }
 
-
 statusColors = {
 	"new" : "pink",
 	"reopened" : "red",
@@ -94,4 +93,5 @@ statusColors = {
 	"code review" : "violet",
 	"client feedback" : "yellow"
 };
+var chartColors = ["black", "navy", "green", "teal", "maroon", "purple", "olive", "silver", "gray", "blue", "lime", "aqua+", "red", "fuschia", "yellow"];
 
