@@ -22,6 +22,8 @@ body {
     #controls button[disabled="true"] {
       color: gray;
       border-color: gray; }
+  #controls h1, #controls h2, #controls h3 {
+    font-size: 1.25em; }
 
 .stats-bars {
   list-style: none;
@@ -66,8 +68,7 @@ body {
   -ms-transform: rotateX(180deg);
   -o-transform: rotateX(180deg);
   transform: rotateX(180deg);
-  border: 1px solid gray;
-  width: 705; }
+  border: 1px solid gray; }
 
 #csv {
   display: none; }

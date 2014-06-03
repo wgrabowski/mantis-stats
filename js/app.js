@@ -35,14 +35,19 @@ statsApp = {
 		for(var i=0,j=button = statsApp.drawButtons.length; i<j; i++){
 		  var button = statsApp.drawButtons[i];
 		  button.onclick = function(e){
-				var set = prepareDataset(statsApp.stats,button.getAttribute("data-draw"));  	
+				var set = prepareDataset(statsApp.stats,e.target.getAttribute("data-draw"));  	
 				drawDataset(set);
 		  };
 		};
 		statsApp.recalcButton.onclick = function(){
 			var i = 0,j=0;
 			statsApp.calcStats();
-			for(i=0,j = statsApp.drawButtons.length; i<j; i++){
+			
+		};
+	},
+	calcStats : function() {
+	  	statsApp.stats = mstats.calc.getDailyStats(statsApp.data);
+	  	for(i=0,j = statsApp.drawButtons.length; i<j; i++){
 				console.log(statsApp.drawButtons[i]);
 				statsApp.drawButtons[i].disabled = false;
 			}
@@ -50,10 +55,6 @@ statsApp = {
 				console.log(statsApp.showButtons[i]);
 				statsApp.showButtons[i].disabled = false;
 			}
-		};
-	},
-	calcStats : function() {
-	  	statsApp.stats = mstats.calc.getDailyStats(statsApp.data);
 
 	},
 	showStats : function(templateName) {

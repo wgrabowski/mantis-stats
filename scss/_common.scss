@@ -25,6 +25,9 @@ body{
       border-color:gray
     }
   }
+  h1,h2,h3{
+    font-size:1.25em;
+  }
 }
 
 .stats-bars{
@@ -85,7 +88,6 @@ body{
   -o-transform: rotateX(180deg);
   transform: rotateX(180deg);
   border:1px solid gray;
-  width:705;
 }
 
 #csv{

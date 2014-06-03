@@ -1,6 +1,7 @@
 var graphs = document.querySelector("#graphs");
 var legend = document.querySelector("#legend");
 
+
 var canvasSize = {
 	x : graphs.width - 100,
 	y : graphs.height
@@ -24,7 +25,7 @@ function drawDataset(dataset) {
 		console.log(key, statusColors[key]);
 		drawChart(dataset[key], chartColors[count-1]);
 		ctx.fillStyle = chartColors[count-1];
-		ctx.font = "bold 30px Roboto,Calibri,sans-serif";
+		ctx.font = "bold 16px Roboto,Calibri,sans-serif";
 		ctx.fillText(key, 10, 30 * count);
 		count++;
 	}

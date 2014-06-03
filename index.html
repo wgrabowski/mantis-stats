@@ -9,8 +9,8 @@
 	<body>
 		<header  id="controls">
 			<hgroup>
-				<h1>Mega paczacz na postępa</h1>
-				<h2>by wg</h2>
+				<h1>Mantis progress visualisation <i>v 0.0.0975368 &beta;</i></h1>
+				
 			</hgroup>
 			<nav>
 			<label for="csv">
@@ -18,11 +18,13 @@
 			</label>
 			<button type="button" id="load">01 Load file(s)</button>
 			<button type="button" id="recalc" disabled="true">02 Calculate statistics</button>
+			
 			<button type="button" data-show="all-stats"  disabled="true">03 Text stats - all field</button>
 			<button type="button" data-show="status-stats"  disabled="true">03 Text stats - by status</button>
-			<button type="button" data-draw="Status"  disabled="true">03 Draw Status charts</button>
-			
-		</nav>
+			<button type="button" data-draw="Status"  disabled="true">03 Draw charts - "Status" field</button>
+			<button type="button" data-draw="Assigned To"  disabled="true">03 Draw charts - "Assigned To" field</button>
+			</nav>
+		
 		</header>
 		
 		<article id="charts">
@@ -43,7 +45,7 @@
 				<section>
 				
 			<canvas id="graphs" width="1500" height="800" style="float:left"></canvas>
-			<canvas id="legend" width="120" height="800" style="float:left">
+			<canvas id="legend" width="300" height="800" style="float:left">
 				Twoja przeglądarka nie obsuługje tego
 			</canvas>
 			<aside style="float:right">
